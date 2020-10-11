@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="server"
+            type="com.shekhar.uobtest.model.Server" />
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/serverTxt"
+        android:text="@{server.country}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"/>
+    <View
+        android:id="@+id/hairLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/color_hairLine" />
+</LinearLayout>
+
+</layout>

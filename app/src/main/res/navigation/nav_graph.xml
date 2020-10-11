@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/serverListFragment">
+    <fragment
+        android:id="@+id/serverListFragment"
+        android:name="com.shekhar.uobtest.view.fragment.ServerListFragment"
+        android:label="Servers"
+        tools:layout="@layout/server_list_fragment">
+        <action
+            android:id="@+id/action_serverListFragment_to_serverDetailFragment"
+            app:destination="@id/serverDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/serverDetailFragment"
+        android:name="com.shekhar.uobtest.view.fragment.ServerDetailsFragment"
+        android:label="RepoDetailFragment"
+        tools:layout="@layout/server_details_fragment">
+        <argument
+            android:name="obj"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="com.shekhar.uobtest.model.Server" />
+
+    </fragment>
+</navigation>
