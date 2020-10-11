@@ -2,16 +2,10 @@ package com.shekhar.uobtest.viewmodel
 
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import com.shekhar.uobtest.R
 import com.shekhar.uobtest.base.BaseViewModel
 import com.shekhar.uobtest.di.DaggerServiceComponent
 import com.shekhar.uobtest.model.Server
-import com.shekhar.uobtest.model.ServerResponse
 import com.shekhar.uobtest.model.ServerService
-import com.shekhar.uobtest.utils.getJsonDataFromAsset
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
@@ -27,7 +21,6 @@ class ServerListViewModel  : BaseViewModel() {
     init {
         DaggerServiceComponent.create().inject(this)
     }
-
 
     fun fetchServers(applicationContext:Context) {
 

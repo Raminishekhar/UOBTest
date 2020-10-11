@@ -61,8 +61,8 @@ class ServerListViewModelTest {
     }
 
     @Test
-    fun getTrendingSuccess(){
-        val server= Server("","","","")
+    fun getServersSuccess(){
+        val server= Server("http://test.com","Singapore","sg","singapore")
         val serverList= arrayListOf(server)
         testSingle= Single.just(serverList)
         val ctx = mock(Context::class.java)
@@ -77,7 +77,7 @@ class ServerListViewModelTest {
     }
 
     @Test
-    fun getTrendingFail(){
+    fun getServersFail(){
         testSingle = Single.error(Throwable())
         val ctx = mock(Context::class.java)
         Mockito.`when`(serverService.getService(ctx)).thenReturn(testSingle)
