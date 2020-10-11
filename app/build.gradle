@@ -31,6 +31,9 @@ android {
         }
     }
 }
+def mockitoVersion ='2.11.0'
+def rxJavaVersion='2.0.1'
+def daggerVersion ='2.13'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -44,6 +47,10 @@ dependencies {
     implementation "android.arch.navigation:navigation-runtime-ktx:$rootProject.nav_version"
     implementation "android.arch.work:work-runtime-ktx:$rootProject.workVersion"
 
+
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
+
     // Anko
     implementation "org.jetbrains.anko:anko:$rootProject.anko_version"
     implementation "org.jetbrains.anko:anko-commons:$rootProject.anko_version"
@@ -53,4 +60,15 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
 
 
+
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation "org.mockito:mockito-inline:$mockitoVersion"
+    testImplementation 'android.arch.core:core-testing:1.1.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }

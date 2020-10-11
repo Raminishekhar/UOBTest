@@ -5,9 +5,9 @@ import androidx.lifecycle.ViewModel
 
 open class BaseViewModel : ViewModel() {
 
-    val empty = MutableLiveData<Boolean>().apply { value = false }
+    val empty = MutableLiveData<Boolean>()
 
-    val dataLoading = MutableLiveData<Boolean>().apply { value = false }
+    val dataLoading = MutableLiveData<Boolean>()
 
     val toastMessage = MutableLiveData<String>()
 }
